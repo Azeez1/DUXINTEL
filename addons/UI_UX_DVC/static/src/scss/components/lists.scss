@@ -1,11 +1,11 @@
-@use "../mixins" as m;
+@import "../mixins";
 
 .o_web_client.dux-theme-dark {
     .o_list_view {
         .table {
-            @include m.glass-morphism();
+            @include glass-morphism();
             border-radius: 12px;
-            @include m.transition-base;
+            @include transition-base;
             thead th {
                 background-color: rgba(255, 255, 255, 0.05);
             }

@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-@use "colors";
-@use "mixins";
-@use "components/navbar";
-@use "components/forms";
-@use "components/lists";
-@use "components/modals";
+// Import mixins first
+@import "mixins";
+@import "colors";
+
+// Then import components
+@import "components/navbar";
+@import "components/forms";
+@import "components/lists";
+@import "components/modals";
 
 .o_web_client.dux-theme-dark {
     color-scheme: dark;
@@ -13,6 +16,6 @@
 }
 
 .o_web_client {
-    @include mixins.transition-base;
+    @include transition-base;
     font-family: 'Inter', sans-serif;
 }
