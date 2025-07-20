@@ -1,10 +1,11 @@
 // Mixins for DUX MACHINA theme
 
-@mixin glass-morphism($blur: 10px, $bg: rgba(255, 255, 255, 0.05)) {
+@mixin glass-morphism($blur: 15px, $bg: rgba(255, 255, 255, 0.05), $shadow: 0 4px 30px rgba(0, 0, 0, 0.1)) {
     background: $bg;
     backdrop-filter: blur($blur);
     -webkit-backdrop-filter: blur($blur);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: $shadow;
 }
 
 @mixin transition-base {

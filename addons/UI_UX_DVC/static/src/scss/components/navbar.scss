@@ -2,9 +2,17 @@
 
 .o_web_client.dux-theme-dark {
     header.o_navbar {
-        @include m.glass-morphism(10px);
+        @include m.glass-morphism();
+        @include m.transition-base;
         .o_menu_brand {
             color: var(--dux-secondary-color);
+        }
+        .o_ux_theme_toggle {
+            border-radius: 8px;
+            @include m.transition-base;
+            &:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
         }
     }
 }

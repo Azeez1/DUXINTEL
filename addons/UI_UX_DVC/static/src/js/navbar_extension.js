@@ -1,12 +1,14 @@
 /** @odoo-module **/
 import { Component } from '@odoo/owl';
 import { registry } from '@web/core/registry';
+import { useService } from '@web/core/utils/hooks';
 
-class ThemeToggleSystray extends Component {
+export class ThemeToggleSystray extends Component {
     static template = 'ui_ux_dvc.ThemeToggleSystray';
+    static props = {};
 
     setup() {
-        this.themeService = this.env.services.dux_theme;
+        this.themeService = useService('dux_theme');
     }
 
     toggle() {
@@ -18,7 +20,8 @@ class ThemeToggleSystray extends Component {
     }
 }
 
-registry.category('systray').add('ui_ux_dvc.theme_toggle', {
+export const systrayItem = {
     Component: ThemeToggleSystray,
-    sequence: 1,
-});
+};
+
+registry.category('systray').add('ui_ux_dvc.theme_toggle', systrayItem, { sequence: 1 });
