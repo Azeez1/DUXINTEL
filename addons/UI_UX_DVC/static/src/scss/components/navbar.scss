@@ -1,0 +1,10 @@
+@use "../mixins" as m;
+
+.o_web_client.dux-theme-dark {
+    header.o_navbar {
+        @include m.glass-morphism(10px);
+        .o_menu_brand {
+            color: var(--dux-secondary-color);
+        }
+    }
+}

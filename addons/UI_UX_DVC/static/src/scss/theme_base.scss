@@ -1,0 +1,12 @@
+@use "colors";
+@use "mixins";
+
+.o_web_client.dux-theme-dark {
+    color-scheme: dark;
+    font-family: 'Inter', sans-serif;
+}
+
+@import "components/navbar";
+@import "components/forms";
+@import "components/lists";
+@import "components/modals";
