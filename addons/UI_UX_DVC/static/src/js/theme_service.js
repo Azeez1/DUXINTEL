@@ -4,7 +4,7 @@ import { registry } from '@web/core/registry';
 export const themeService = {
     start(env) {
         const STORAGE_KEY = 'dux-theme';
-        const defaultTheme = env.config && env.config.mode === 'dark' ? 'dark' : 'light';
+        const defaultTheme = (env.config && env.config.mode === 'dark') ? 'dark' : 'light';
         const initial = localStorage.getItem(STORAGE_KEY) || defaultTheme;
 
         const state = { theme: initial };
