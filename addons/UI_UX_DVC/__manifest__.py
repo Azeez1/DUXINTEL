@@ -25,9 +25,7 @@
         ],
     },
     'data': [
-        'views/backend_assets.xml',
         'views/backend_menu_customization.xml',
-        'views/frontend_assets.xml',
         'views/website_templates.xml',
     ],
     'installable': True,
