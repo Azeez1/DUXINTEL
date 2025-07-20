@@ -1,5 +1,3 @@
-@import "../mixins";
-
 .o_web_client.dux-theme-dark {
     header.o_navbar {
         @include glass-morphism();

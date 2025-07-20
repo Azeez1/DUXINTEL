@@ -22,7 +22,16 @@
             ),
         ],
         'web.assets_backend': [
+            # Load mixins first
+            'UI_UX_DVC/static/src/scss/mixins.scss',
+            # Then components
+            'UI_UX_DVC/static/src/scss/components/navbar.scss',
+            'UI_UX_DVC/static/src/scss/components/forms.scss',
+            'UI_UX_DVC/static/src/scss/components/lists.scss',
+            'UI_UX_DVC/static/src/scss/components/modals.scss',
+            # Then main theme
             'UI_UX_DVC/static/src/scss/theme_base.scss',
+            # JS files
             'UI_UX_DVC/static/src/js/theme_service.js',
             'UI_UX_DVC/static/src/js/theme_init.js',
             'UI_UX_DVC/static/src/js/navbar_extension.js',
