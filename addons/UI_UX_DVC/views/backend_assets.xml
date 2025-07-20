@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template id="assets_backend" name="DUX MACHINA Backend Assets" inherit_id="web.assets_backend">
+    <template id="assets_backend" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
-            <link rel="stylesheet" type="scss" href="/UI_UX_DVC/static/src/scss/backend_theme.scss"/>
-            <script type="module" src="/UI_UX_DVC/static/src/js/backend_customization.js"/>
-            <t t-call-assets="/UI_UX_DVC/static/src/xml/backend_templates.xml"/>
+            <link rel="stylesheet" type="text/scss" href="/UI_UX_DVC/static/src/scss/backend_theme.scss"/>
+            <script type="text/javascript" src="/UI_UX_DVC/static/src/js/backend_customization.js"/>
         </xpath>
     </template>
 </odoo>
