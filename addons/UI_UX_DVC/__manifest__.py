@@ -12,7 +12,7 @@
     ''',
     'author': 'DUX MACHINA',
     'website': 'https://duxmachina.com',
-    'depends': ['base', 'web', 'website', 'portal'],
+    'depends': ['base', 'web'],
     'assets': {
         'web.assets_backend': [
             'UI_UX_DVC/static/src/scss/backend_theme.scss',
