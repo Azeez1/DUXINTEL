@@ -1,50 +1,37 @@
 /** @odoo-module **/
 
-import { Component, useState } from '@odoo/owl';
+import { onMounted } from '@odoo/owl';
+
+// Add immediate visual feedback when module loads
+onMounted(() => {
+    console.log('DUX MACHINA UI/UX Theme Loaded');
+    document.body.classList.add('dux-machina-theme');
+});
 
 /**
- * DuxMachinaDashboard Component
- * Placeholder component showing stats and charts.
+ * Theme initialization
  */
-export class DuxMachinaDashboard extends Component {
-    setup() {
-        this.state = useState({});
+class DuxMachinaTheme {
+    constructor() {
+        this.init();
     }
-    // TODO: Implement real-time statistics and 3D charts
+    
+    init() {
+        // Add theme class to body
+        document.body.classList.add('dux-machina-theme');
+        
+        // Initialize theme based on user preference
+        const savedTheme = localStorage.getItem('dux-theme') || 'dark';
+        document.body.setAttribute('data-theme', savedTheme);
+        
+        console.log('DUX MACHINA Theme initialized');
+    }
 }
 
-/**
- * SmartSearchBar Component
- * Placeholder with AI-powered search and voice search features.
- */
-export class SmartSearchBar extends Component {
-    setup() {
-        this.state = useState({ query: '' });
-    }
-    // TODO: Implement search suggestions and voice input
-}
+// Initialize theme when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    new DuxMachinaTheme();
+});
 
-/**
- * NotificationCenter Component
- * Placeholder for categorized notifications with WebSocket updates.
- */
-export class NotificationCenter extends Component {
-    setup() {
-        this.state = useState({});
-    }
-    // TODO: Implement real-time notification updates
-}
-
-/**
- * ThemeToggle Component
- * Switch between light and dark themes with animation.
- */
-export class ThemeToggle extends Component {
-    setup() {
-        this.state = useState({ dark: false });
-    }
-    toggle() {
-        this.state.dark = !this.state.dark;
-        // TODO: Persist preference to user settings
-    }
-}
+// Export components for future use
+export { DuxMachinaTheme };
