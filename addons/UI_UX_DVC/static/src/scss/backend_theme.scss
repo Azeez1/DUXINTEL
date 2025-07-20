@@ -3,10 +3,296 @@ $primary-color: #0A0E27;
 $secondary-color: #00D4FF;
 $accent-color: #FF006E;
 $background-color: #F8F9FD;
+$dark-bg: #0a0e27;
+$glass-bg: rgba(255, 255, 255, 0.1);
 
-body.o_web_client {
-    background-color: $background-color;
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+// Main application styling
+.o_web_client {
+    background: linear-gradient(135deg, #0A0E27 0%, #1a1f3a 100%);
     font-family: 'Inter', sans-serif;
+    
+    // Top navigation bar with glassmorphism
+    .o_main_navbar {
+        background: $glass-bg;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        
+        .o_menu_brand {
+            color: $secondary-color;
+            font-weight: 600;
+            font-size: 20px;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+        
+        .o_menu_item {
+            color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            
+            &:hover {
+                color: $secondary-color;
+                background: rgba(0, 212, 255, 0.1);
+                transform: translateY(-2px);
+            }
+        }
+    }
+    
+    // Sidebar styling
+    .o_navbar {
+        background: rgba(10, 14, 39, 0.95);
+        backdrop-filter: blur(10px);
+        border-right: 1px solid rgba(0, 212, 255, 0.2);
+        
+        .o_menu_sections {
+            .dropdown-item {
+                color: rgba(255, 255, 255, 0.8);
+                transition: all 0.3s ease;
+                border-radius: 8px;
+                margin: 4px 8px;
+                
+                &:hover {
+                    background: linear-gradient(90deg, rgba(0, 212, 255, 0.2), transparent);
+                    color: $secondary-color;
+                    padding-left: 20px;
+                }
+                
+                &.selected {
+                    background: rgba(0, 212, 255, 0.2);
+                    color: $secondary-color;
+                    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+                }
+            }
+        }
+    }
+    
+    // Content area
+    .o_content {
+        background: transparent;
+        
+        // Forms with glassmorphism
+        .o_form_view {
+            .o_form_sheet_bg {
+                background: $glass-bg;
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 20px;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            }
+            
+            .o_form_sheet {
+                background: transparent;
+            }
+        }
+        
+        // List views
+        .o_list_view {
+            .o_list_table {
+                background: $glass-bg;
+                backdrop-filter: blur(20px);
+                border-radius: 16px;
+                overflow: hidden;
+                
+                thead {
+                    background: rgba(0, 212, 255, 0.1);
+                    
+                    th {
+                        color: $secondary-color;
+                        font-weight: 600;
+                        border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+                    }
+                }
+                
+                tbody tr {
+                    transition: all 0.3s ease;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                    
+                    &:hover {
+                        background: rgba(0, 212, 255, 0.05);
+                        transform: scale(1.01);
+                        box-shadow: 0 4px 20px rgba(0, 212, 255, 0.2);
+                    }
+                    
+                    td {
+                        color: rgba(255, 255, 255, 0.9);
+                    }
+                }
+            }
+        }
+        
+        // Kanban cards
+        .o_kanban_view {
+            .o_kanban_group {
+                background: $glass-bg;
+                backdrop-filter: blur(20px);
+                border-radius: 16px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                
+                .o_kanban_header {
+                    background: rgba(0, 212, 255, 0.1);
+                    color: $secondary-color;
+                }
+                
+                .o_kanban_record {
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    transition: all 0.3s ease;
+                    
+                    &:hover {
+                        transform: translateY(-4px);
+                        box-shadow: 0 8px 24px rgba(0, 212, 255, 0.3);
+                        border-color: $secondary-color;
+                    }
+                }
+            }
+        }
+    }
+    
+    // Buttons
+    .btn {
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        
+        &.btn-primary {
+            background: linear-gradient(135deg, $secondary-color, #0099cc);
+            border: none;
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+            
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 30px rgba(0, 212, 255, 0.5);
+            }
+        }
+        
+        &.btn-secondary {
+            background: $glass-bg;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            
+            &:hover {
+                background: rgba(255, 255, 255, 0.2);
+                border-color: $secondary-color;
+            }
+        }
+    }
+    
+    // Input fields
+    .o_input, .o_field_widget input, select {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: all 0.3s ease;
+        
+        &:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: $secondary-color;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            outline: none;
+        }
+    }
+    
+    // Modals
+    .modal-content {
+        background: rgba(10, 14, 39, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(0, 212, 255, 0.3);
+        border-radius: 16px;
+        
+        .modal-header {
+            background: rgba(0, 212, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+            
+            .modal-title {
+                color: $secondary-color;
+            }
+        }
+        
+        .modal-body {
+            color: rgba(255, 255, 255, 0.9);
+        }
+    }
+    
+    // Animations
+    @keyframes glow {
+        from { box-shadow: 0 0 20px rgba(0, 212, 255, 0.5); }
+        to { box-shadow: 0 0 30px rgba(0, 212, 255, 0.8); }
+    }
+    
+    // Control panel
+    .o_control_panel {
+        background: $glass-bg;
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 20px;
+        border-radius: 12px;
+        
+        .o_searchview {
+            .o_searchview_input {
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                color: white;
+                
+                &:focus {
+                    border-color: $secondary-color;
+                }
+            }
+        }
+    }
+    
+    // Breadcrumbs
+    .o_breadcrumb {
+        .breadcrumb-item {
+            color: rgba(255, 255, 255, 0.7);
+            
+            &.active {
+                color: $secondary-color;
+            }
+            
+            a {
+                color: rgba(255, 255, 255, 0.9);
+                transition: color 0.3s ease;
+                
+                &:hover {
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+    
+    // Dropdowns
+    .dropdown-menu {
+        background: rgba(10, 14, 39, 0.95);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(0, 212, 255, 0.2);
+        
+        .dropdown-item {
+            color: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            
+            &:hover {
+                background: rgba(0, 212, 255, 0.2);
+                color: $secondary-color;
+            }
+        }
+    }
+    
+    // Tooltips
+    .tooltip-inner {
+        background: rgba(10, 14, 39, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 212, 255, 0.3);
+        color: white;
+    }
+    
+    // Loading spinner
+    .o_loading {
+        &:after {
+            border-color: rgba(0, 212, 255, 0.2);
+            border-top-color: $secondary-color;
+        }
+    }
 }
-
-// TODO: Implement glassmorphism effects and animations
