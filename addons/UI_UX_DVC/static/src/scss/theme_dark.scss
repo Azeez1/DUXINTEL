@@ -1,6 +1,36 @@
 @use "mixins";
+@use "colors";
 
 .o_web_client.dux-theme-dark {
-    background: #0A0E27;
+    background: var(--dux-primary-color);
     color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    input,
+    textarea,
+    select {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        @include mixins.transition-base;
+    }
+    .btn {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        @include mixins.transition-base;
+        &:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+    }
+    .card {
+        @include mixins.glass-morphism();
+        border-radius: 12px;
+    }
+    table.table tr:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+    .dropdown-menu {
+        @include mixins.glass-morphism();
+        border-radius: 12px;
+    }
 }

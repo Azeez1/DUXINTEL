@@ -9,7 +9,8 @@ export const themeService = {
         const state = { theme: initial };
 
         function apply(theme) {
-            document.documentElement.classList.toggle('dux-theme-dark', theme === 'dark');
+            const client = document.querySelector('.o_web_client');
+            (client || document.documentElement).classList.toggle('dux-theme-dark', theme === 'dark');
             state.theme = theme;
             localStorage.setItem(STORAGE_KEY, theme);
         }

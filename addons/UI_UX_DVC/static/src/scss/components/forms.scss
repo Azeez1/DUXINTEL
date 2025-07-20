@@ -1,8 +1,11 @@
 @use "../mixins" as m;
 
 .o_web_client.dux-theme-dark {
-    .o_form_view .o_form_sheet_bg {
-        @include m.glass-morphism(10px);
-        border-radius: 12px;
+    .o_form_sheet_bg {
+        .o_form_sheet {
+            @include m.glass-morphism();
+            border-radius: 12px;
+            @include m.transition-base;
+        }
     }
 }

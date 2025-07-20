@@ -1,8 +1,11 @@
 @use "../mixins" as m;
 
 .o_web_client.dux-theme-dark {
-    .modal-content {
-        @include m.glass-morphism(10px);
-        border-radius: 12px;
+    .modal-dialog {
+        .modal-content {
+            @include m.glass-morphism();
+            border-radius: 12px;
+            @include m.transition-base;
+        }
     }
 }
