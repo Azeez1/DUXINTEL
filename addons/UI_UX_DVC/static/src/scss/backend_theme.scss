@@ -1,0 +1,12 @@
+// Backend theme styles for DUX MACHINA
+$primary-color: #0A0E27;
+$secondary-color: #00D4FF;
+$accent-color: #FF006E;
+$background-color: #F8F9FD;
+
+body.o_web_client {
+    background-color: $background-color;
+    font-family: 'Inter', sans-serif;
+}
+
+// TODO: Implement glassmorphism effects and animations
