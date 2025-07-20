@@ -17,7 +17,6 @@
         'web.assets_backend': [
             'UI_UX_DVC/static/src/scss/backend_theme.scss',
             'UI_UX_DVC/static/src/js/backend_customization.js',
-            'UI_UX_DVC/static/src/xml/backend_templates.xml',
         ],
         'web.assets_frontend': [
             'UI_UX_DVC/static/src/scss/frontend_theme.scss',
