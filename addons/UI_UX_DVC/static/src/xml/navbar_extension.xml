@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ui_ux_dvc.ThemeToggleSystray">
+        <button type="button" class="btn btn-secondary o_ux_theme_toggle" t-on-click="toggle" t-att-title="isDark ? 'Switch to light mode' : 'Switch to dark mode'">
+            <i t-if="!isDark" class="fa fa-moon-o"/>
+            <i t-else="" class="fa fa-sun-o"/>
+        </button>
+    </t>
+</templates>
