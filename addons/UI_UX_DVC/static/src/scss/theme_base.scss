@@ -2,6 +2,10 @@
 
 @use "colors";
 @use "mixins";
+@use "components/navbar";
+@use "components/forms";
+@use "components/lists";
+@use "components/modals";
 
 .o_web_client.dux-theme-dark {
     color-scheme: dark;
@@ -12,8 +16,3 @@
     @include mixins.transition-base;
     font-family: 'Inter', sans-serif;
 }
-
-@use "components/navbar";
-@use "components/forms";
-@use "components/lists";
-@use "components/modals";
