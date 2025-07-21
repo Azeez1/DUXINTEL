@@ -1,1 +1,1 @@
-from . import res_config_settings  # noqa: F401
+from . import res_config_settings
